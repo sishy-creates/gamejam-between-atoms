@@ -8,7 +8,7 @@ public class collapsingPlatform : MonoBehaviour
 
     private void Awake()
     {
-        collapsingTime = 3f;
+        collapsingTime = 1.4f;
     }
 
     private void Update()
