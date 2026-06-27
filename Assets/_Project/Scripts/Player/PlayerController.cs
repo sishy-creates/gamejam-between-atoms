@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] public float walkSpeed = 3f;
-    [SerializeField] public float runSpeed = 6f;
+    [SerializeField] public float runSpeed = 4.5f;
     [SerializeField] private float acceleration = 50f;
 
     [Header("Jump")]
@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour
         wallCheckDelayTimer = 0.25f;
         isWallSliding = false;
 
-        Flip();
+        //Flip();
     }
 
     private void HandleWallSlide()
@@ -263,5 +263,49 @@ public void ResetPlayerState()
     isWallSliding = false;
     isDashing = false;
     canDash = true;
+
+    // PowerUps
+    speedMultiplier = 1f;
+    jumpMultiplier = 1f;
+    hasDashUnlocked = false;
 }
+
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        PickupItem item = other.GetComponent<PickupItem>();
+
+        if (item != null)
+        {
+            CollectItem(item);
+            Destroy(other.gameObject);
+        }
+    }
+
+    // Permanent
+    private void CollectItem(PickupItem item)
+    {
+        switch (item.type)
+        {
+            case PickupItem.ItemType.GreenPowerUp_JumpUpgrade:
+                // Updates jump multiplier
+                jumpMultiplier = item.intensityMultiplier;
+                Debug.Log($"Collected Green Potion: Jump permanently upgraded to {jumpMultiplier}x!");
+                break;
+
+            case PickupItem.ItemType.YellowPowerUp_SpeedBoost:
+                // Updates speed multiplier
+                speedMultiplier = item.intensityMultiplier;
+                Debug.Log($"Collected Yellow Potion: Speed permanently upgraded to {speedMultiplier}x!");
+                break;
+
+            case PickupItem.ItemType.Blue_PowerUp:
+                // Unlocks dash
+                hasDashUnlocked = true;
+                Debug.Log("Collected Neon-Blue Tube: Dash Feature Permanently Unlocked! (Press F)");
+                break;
+        }
+    }
+
+
 }
