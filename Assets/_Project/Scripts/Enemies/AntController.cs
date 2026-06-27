@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class AntController : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class AntController : MonoBehaviour
 
     [Header("Stomp")]
     [SerializeField] private float stompBounceForce = 8f;
+
+    [SerializeField] private UnityEvent onDie;
+
 
     private Rigidbody2D rb;
     private bool isDead;
@@ -67,6 +72,7 @@ public class AntController : MonoBehaviour
             {
                 playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, stompBounceForce);
             }
+            Destroy(gameObject);
         }
         else
         {
@@ -78,6 +84,7 @@ public class AntController : MonoBehaviour
     {
         isDead = true;
         rb.linearVelocity = Vector2.zero;
+        onDie.Invoke();
         gameObject.SetActive(false);
 
         Debug.Log("Ant dead!");

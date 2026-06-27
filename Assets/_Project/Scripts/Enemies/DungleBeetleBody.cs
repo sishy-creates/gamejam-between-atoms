@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DungBeetleBody : MonoBehaviour
 {
     [SerializeField] private GameObject beetleGroup;
     [SerializeField] private float stompBounceForce = 8f;
+
+    [SerializeField] private UnityEvent onDie;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,6 +22,7 @@ public class DungBeetleBody : MonoBehaviour
                 playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, stompBounceForce);
 
             beetleGroup.SetActive(false);
+            onDie.Invoke();
         }
         else
         {

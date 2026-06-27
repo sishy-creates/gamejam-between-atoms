@@ -119,6 +119,78 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &9987843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9987844}
+  - component: {fileID: 9987845}
+  m_Layer: 0
+  m_Name: MenuAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9987844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9987843}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.48351, y: -0.69515, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9987845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9987843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf5e04bc58fd4c849495313ac382d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAudioController
+  soundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  oneShotEvent:
+    Guid:
+      Data1: -479859848
+      Data2: 1186738551
+      Data3: 548368291
+      Data4: -1355200037
+    Path: event:/Select
+  collisionSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  triggerSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &72432421
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +326,8 @@ GameObject:
   - component: {fileID: 584846654}
   - component: {fileID: 584846653}
   - component: {fileID: 584846652}
+  - component: {fileID: 584846655}
+  - component: {fileID: 584846656}
   m_Layer: 5
   m_Name: B_Option
   m_TagString: Untagged
@@ -324,7 +398,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 584846653}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9987845}
+        m_TargetAssemblyTypeName: SimpleAudioController, Assembly-CSharp
+        m_MethodName: PlayOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &584846653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +449,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584846650}
   m_CullTransparentMesh: 1
+--- !u!114 &584846655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584846650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e1f8c8ce83a40e6b2a9a846c454019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverButtonAudioHelper
+  onHoverEvent:
+    Guid:
+      Data1: -864189110
+      Data2: 1139056457
+      Data3: -2015910511
+      Data4: 674790926
+    Path: event:/Navigate
+  onClickEvent:
+    Guid:
+      Data1: -479859848
+      Data2: 1186738551
+      Data3: 548368291
+      Data4: -1355200037
+    Path: event:/Select
+--- !u!114 &584846656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584846650}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf5e04bc58fd4c849495313ac382d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAudioController
+  soundEvent:
+    Guid:
+      Data1: -479859848
+      Data2: 1186738551
+      Data3: 548368291
+      Data4: -1355200037
+    Path: event:/Select
+  oneShotEvent:
+    Guid:
+      Data1: -479859848
+      Data2: 1186738551
+      Data3: 548368291
+      Data4: -1355200037
+    Path: event:/Select
+  collisionSoundEvent:
+    Guid:
+      Data1: -479859848
+      Data2: 1186738551
+      Data3: 548368291
+      Data4: -1355200037
+    Path: event:/Select
+  triggerSoundEvent:
+    Guid:
+      Data1: -479859848
+      Data2: 1186738551
+      Data3: 548368291
+      Data4: -1355200037
+    Path: event:/Select
 --- !u!1 &1037042208
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +527,7 @@ GameObject:
   - component: {fileID: 1037042212}
   - component: {fileID: 1037042211}
   - component: {fileID: 1037042210}
+  - component: {fileID: 1037042213}
   m_Layer: 5
   m_Name: B_Quit
   m_TagString: Untagged
@@ -445,7 +598,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1037042211}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9987845}
+        m_TargetAssemblyTypeName: SimpleAudioController, Assembly-CSharp
+        m_MethodName: PlayOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1037042211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,6 +649,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037042208}
   m_CullTransparentMesh: 1
+--- !u!114 &1037042213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037042208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e1f8c8ce83a40e6b2a9a846c454019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverButtonAudioHelper
+  onHoverEvent:
+    Guid:
+      Data1: -864189110
+      Data2: 1139056457
+      Data3: -2015910511
+      Data4: 674790926
+    Path: event:/Navigate
+  onClickEvent:
+    Guid:
+      Data1: -479859848
+      Data2: 1186738551
+      Data3: 548368291
+      Data4: -1355200037
+    Path: event:/Select
 --- !u!1 &1200115237
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +826,7 @@ GameObject:
   - component: {fileID: 1216943420}
   - component: {fileID: 1216943419}
   - component: {fileID: 1216943418}
+  - component: {fileID: 1216943421}
   m_Layer: 5
   m_Name: B_PLay
   m_TagString: Untagged
@@ -718,6 +910,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9987845}
+        m_TargetAssemblyTypeName: SimpleAudioController, Assembly-CSharp
+        m_MethodName: PlayOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1216943419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,6 +960,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216943416}
   m_CullTransparentMesh: 1
+--- !u!114 &1216943421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216943416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e1f8c8ce83a40e6b2a9a846c454019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverButtonAudioHelper
+  onHoverEvent:
+    Guid:
+      Data1: -864189110
+      Data2: 1139056457
+      Data3: -2015910511
+      Data4: 674790926
+    Path: event:/Navigate
+  onClickEvent:
+    Guid:
+      Data1: -479859848
+      Data2: 1186738551
+      Data3: 548368291
+      Data4: -1355200037
+    Path: event:/Select
 --- !u!1 &1435574745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,8 +1239,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1767875193}
   - component: {fileID: 1767875192}
-  - component: {fileID: 1767875191}
   - component: {fileID: 1767875194}
+  - component: {fileID: 1767875195}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1018,14 +1248,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1767875191
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1767875190}
-  m_Enabled: 1
 --- !u!20 &1767875192
 Camera:
   m_ObjectHideFlags: 0
@@ -1136,6 +1358,20 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1767875195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767875190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &1791043645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,3 +1519,4 @@ SceneRoots:
   - {fileID: 72432423}
   - {fileID: 1435574749}
   - {fileID: 212258690}
+  - {fileID: 9987844}

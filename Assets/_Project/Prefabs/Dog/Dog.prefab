@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 1419926443125234390}
   - component: {fileID: 1054173287978658504}
   - component: {fileID: 8775324833396407809}
+  - component: {fileID: 2864294768621163205}
   m_Layer: 8
   m_Name: Dog
   m_TagString: Untagged
@@ -365,6 +366,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DogOffScreenLoseCondition
   mainCamera: {fileID: 0}
   maxOffScreenTime: 10
+--- !u!114 &2864294768621163205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128686021009901799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf5e04bc58fd4c849495313ac382d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAudioController
+  soundEvent:
+    Guid:
+      Data1: 869701559
+      Data2: 1175612596
+      Data3: 1952254358
+      Data4: 1238375547
+    Path: event:/Cane
+  oneShotEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  collisionSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  triggerSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &8597080847353939496
 GameObject:
   m_ObjectHideFlags: 0

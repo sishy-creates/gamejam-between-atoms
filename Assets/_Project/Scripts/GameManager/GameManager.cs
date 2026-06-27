@@ -1,10 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    [SerializeField] private UnityEvent onWin;
+    [SerializeField] private UnityEvent onLose;
 
     public bool IsGameOver { get; private set; }
     public bool IsVictory { get; private set; }
@@ -27,6 +31,7 @@ public class GameManager : MonoBehaviour
         if (IsGameOver || IsVictory) return;
 
         IsVictory = true;
+        onWin.Invoke();
         Time.timeScale = 0f;
         Debug.Log("VICTORY");
     }
@@ -36,6 +41,7 @@ public class GameManager : MonoBehaviour
         if (IsGameOver || IsVictory) return;
 
         IsGameOver = true;
+        onLose.Invoke();
         Time.timeScale = 0f;
         Debug.Log("GAME OVER");
     }

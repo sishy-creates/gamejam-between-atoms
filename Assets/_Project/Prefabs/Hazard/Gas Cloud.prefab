@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3376240689676896211}
   - component: {fileID: 1606493571180290192}
   - component: {fileID: 5516001215633773692}
+  - component: {fileID: 2915242214732461101}
   m_Layer: 0
   m_Name: Gas Cloud
   m_TagString: Untagged
@@ -142,3 +143,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::gasCloud
   speedReduction: 0
+--- !u!114 &2915242214732461101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5449482284271056618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf5e04bc58fd4c849495313ac382d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAudioController
+  soundEvent:
+    Guid:
+      Data1: 33325876
+      Data2: 1300289279
+      Data3: 491018166
+      Data4: 378569718
+    Path: event:/ParticleFog
+  oneShotEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  oneShotEvent2:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  oneShotEvent3:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  collisionSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  triggerSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

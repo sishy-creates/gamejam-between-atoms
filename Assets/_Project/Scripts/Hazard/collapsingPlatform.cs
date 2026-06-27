@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class collapsingPlatform : MonoBehaviour
 {
     [SerializeField] private float collapsingTime = 1.4f;
+    [SerializeField] private UnityEvent onCollapse;
+
 
     private bool collaps = false;
     float index = 0; 
@@ -19,6 +22,7 @@ public class collapsingPlatform : MonoBehaviour
             index += Time.deltaTime;
             if (index >= collapsingTime)
             {
+                onCollapse.Invoke();
                 Destroy(gameObject);
             }
         }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4367553719040688013}
   - component: {fileID: 7227485099990734713}
   - component: {fileID: 1005028466729743732}
+  - component: {fileID: 635942205306612250}
   m_Layer: 6
   m_Name: Collapsing Platform
   m_TagString: Untagged
@@ -198,3 +199,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835cb8422caf9b748b8712b4c892c180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  collapsingTime: 1.4
+  onCollapse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 635942205306612250}
+        m_TargetAssemblyTypeName: SimpleAudioController, Assembly-CSharp
+        m_MethodName: PlayOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &635942205306612250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7480024226456371282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf5e04bc58fd4c849495313ac382d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAudioController
+  soundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  oneShotEvent:
+    Guid:
+      Data1: 845414475
+      Data2: 1252213942
+      Data3: -124135792
+      Data4: 1868791328
+    Path: event:/Stones
+  oneShotEvent2:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  oneShotEvent3:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  collisionSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  triggerSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
