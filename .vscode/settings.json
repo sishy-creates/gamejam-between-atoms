@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "gamejam-between-atoms.slnx"
+    "dotnet.defaultSolution": "BetweenAtoms.slnx"
 }

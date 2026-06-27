@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class DogController : MonoBehaviour
@@ -22,6 +23,8 @@ public class DogController : MonoBehaviour
     [Header("Enemy Check")]
     [SerializeField] private LayerMask enemyLayer;
 
+    private Animator animator;
+
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool isCaught;
@@ -30,11 +33,13 @@ public class DogController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         CheckGround();
+        UpdateAnimator();
     }
 
     private void FixedUpdate()
@@ -62,6 +67,11 @@ public class DogController : MonoBehaviour
         rb.linearVelocity = new Vector2(moveSpeed, rb.linearVelocity.y);
     }
 
+    private void UpdateAnimator()
+    {
+        animator.SetBool("isGrounded", isGrounded);
+        animator.SetBool("isRunning", Math.Abs(rb.linearVelocity.x)> 0.1f);
+    }
     private void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircle(
@@ -106,7 +116,7 @@ public class DogController : MonoBehaviour
 
     public void StopDog()
     {
-        isCaught = true;
+        isCaught = true; 
         rb.linearVelocity = Vector2.zero;
     }
 
