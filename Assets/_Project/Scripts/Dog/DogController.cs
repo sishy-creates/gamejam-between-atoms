@@ -19,6 +19,9 @@ public class DogController : MonoBehaviour
     [SerializeField] private Transform gapCheck;
     [SerializeField] private float gapCheckDistance = 0.6f;
 
+    [Header("Enemy Check")]
+    [SerializeField] private LayerMask enemyLayer;
+
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool isCaught;
@@ -69,16 +72,18 @@ public class DogController : MonoBehaviour
     }
 
     private bool CheckWall()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(
-            wallCheck.position,
-            Vector2.right,
-            wallCheckDistance,
-            groundLayer
-        );
+{
+    LayerMask obstacleLayers = groundLayer | enemyLayer;
 
-        return hit.collider != null;
-    }
+    RaycastHit2D hit = Physics2D.Raycast(
+        wallCheck.position,
+        Vector2.right,
+        wallCheckDistance,
+        obstacleLayers
+    );
+
+    return hit.collider != null;
+}
 
     private bool CheckGap()
     {
