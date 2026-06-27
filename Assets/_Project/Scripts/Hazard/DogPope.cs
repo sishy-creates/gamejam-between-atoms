@@ -1,10 +1,16 @@
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Events;
+
 
 public class DogPope : MonoBehaviour
 {
     [SerializeField] private float incapacityTime = 3f;
     [SerializeField] private bool p_incapacity = false;
+
+    [SerializeField] private UnityEvent onHit;
+
 
     private float originalJumpForce;
     private float originalWalkSpeed;
@@ -60,5 +66,7 @@ public class DogPope : MonoBehaviour
         playerController.jumpForce = 0f;
 
         p_incapacity = true;
+
+        onHit.Invoke();
     }
 }

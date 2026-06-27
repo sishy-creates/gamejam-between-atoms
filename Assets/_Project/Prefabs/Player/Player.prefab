@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 8463973630218903396}
   - component: {fileID: 3310740774700969576}
   - component: {fileID: 5681681639809173081}
+  - component: {fileID: 6495922364151353036}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -204,6 +205,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8eec623a4bb8474994de8e823b12dd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  onSlide:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6495922364151353036}
+        m_TargetAssemblyTypeName: PlayerAudioController, Assembly-CSharp
+        m_MethodName: PlaySlipSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   walkSpeed: 3
   runSpeed: 6
   acceleration: 50
@@ -229,6 +245,60 @@ MonoBehaviour:
   jumpMultiplier: 1
   controlsInverted: 0
   hasDashUnlocked: 0
+--- !u!114 &6495922364151353036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766790819148719587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1440b468555974461a8f67e25b06e8be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAudioController
+  footStepsSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  jumpSoundEvent:
+    Guid:
+      Data1: 965967477
+      Data2: 1106120510
+      Data3: 1291015064
+      Data4: -851127127
+    Path: event:/Jump
+  deathSoundEvent:
+    Guid:
+      Data1: 1406823706
+      Data2: 1264616489
+      Data3: 1758448539
+      Data4: 1331030030
+    Path: event:/Death
+  slipSoundEvent:
+    Guid:
+      Data1: -1964045470
+      Data2: 1168130366
+      Data3: -1017183332
+      Data4: 4949851
+    Path: event:/Slip
+  impactSoundEvent:
+    Guid:
+      Data1: 137294869
+      Data2: 1196419375
+      Data3: 984065930
+      Data4: -1807156844
+    Path: event:/Obstacle
+  pickupSoundEvent:
+    Guid:
+      Data1: 553056014
+      Data2: 1226971289
+      Data3: -688599626
+      Data4: -187968505
+    Path: event:/Get
 --- !u!1 &919842715304160462
 GameObject:
   m_ObjectHideFlags: 0

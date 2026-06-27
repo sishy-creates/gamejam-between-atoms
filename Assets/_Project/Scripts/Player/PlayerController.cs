@@ -1,9 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
+
+    //Events
+    [Header("Events")]
+    [SerializeField] private UnityEvent onSlide;
+
     [Header("Movement")]
     [SerializeField] public float walkSpeed = 3f;
     [SerializeField] public float runSpeed = 6f;
@@ -193,6 +199,7 @@ public class PlayerController : MonoBehaviour
         {
             isWallSliding = true;
             jumpsLeft = maxJumps;
+            onSlide.Invoke();
         }
         else
         {

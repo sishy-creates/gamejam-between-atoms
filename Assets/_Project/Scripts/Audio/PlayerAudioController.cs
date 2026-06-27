@@ -52,26 +52,27 @@ public class PlayerAudioController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        if (!collision.gameObject.CompareTag("TODO"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             return;
         }
 
-        if (collision.relativeVelocity.magnitude > 2f)
+        if (!impactSoundEvent.IsNull)
         {
-            if (!impactSoundEvent.IsNull)
-            {
-                Vector3 contactPoint = collision.contacts[0].point;
-                RuntimeManager.PlayOneShot(impactSoundEvent, contactPoint);
-            }
+            RuntimeManager.PlayOneShot(impactSoundEvent);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        
+        if (other.CompareTag("Ground"))
+        {
+            return;
+        }
+        
         if (other.CompareTag("TODO"))
         {
             if (!pickupSoundEvent.IsNull)
