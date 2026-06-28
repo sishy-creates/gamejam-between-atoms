@@ -11,7 +11,7 @@ public class CreditsScroll : MonoBehaviour
 
     [SerializeField] private bool m_loop = false;
 
-    public UnityEvent onFinished;
+    public UnityEvent onFinished = new UnityEvent();
 
     private float m_startY;
     private float m_endY;

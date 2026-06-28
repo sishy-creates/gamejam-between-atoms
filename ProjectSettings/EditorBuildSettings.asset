@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/VerticalSlice.unity
     guid: 21d4dfc0b1636c143af89aafc24548b3
   - enabled: 1
-    path: Assets/_Project/Scenes/MainMenu.unity
+    path: Assets/_Project/Scenes/MainMenu2.unity
     guid: a124602b82281f943a920b42e5cb3bae
   - enabled: 1
     path: Assets/_Project/Scenes/Level 1.unity

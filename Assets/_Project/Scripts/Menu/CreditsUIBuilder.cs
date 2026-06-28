@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 public class CreditsUIBuilder : MonoBehaviour
 {
@@ -9,9 +9,9 @@ public class CreditsUIBuilder : MonoBehaviour
     [SerializeField]
     private string m_creditsText =
         "CREDITS\n\n\n" +
-        "Game Design\nFilippo\nCalogero \n\n" +
-        "Programming\nSilvia\nMatteo\nFilippo\nAntonio\nAlessandro\nCalogero\n\n" +
-        "Art\nCalogero\nAntonio\n\n" +
+        "Game Design\nCalogero & Filippo\n\n" +
+        "Programming\nSilvia\nMatteo\nCalogero\nFilippo\nAntonio\nAlessandro\n\n" +
+        "Art\nCalogero & Antonio\n\n" +
         "Audio\nAlessandro\n\n\n" +
         "Thanks for playing!";
 
@@ -21,6 +21,10 @@ public class CreditsUIBuilder : MonoBehaviour
     [SerializeField] private Color m_textColor = Color.white;
     [SerializeField] private Color m_backgroundColor = new Color(0f, 0f, 0f, 0.85f);
 
+    [Header("UI Styling")]
+    [Tooltip("Drag your Pixel Art TextMeshPro Font Asset here!")]
+    [SerializeField] private TMP_FontAsset m_customFont;
+
     [Tooltip("Main menu objects (buttons, title...) to hide while credits are open.")]
     [SerializeField] private GameObject[] m_objectsToHideWhileOpen;
 
@@ -29,22 +33,21 @@ public class CreditsUIBuilder : MonoBehaviour
     private void Awake()
     {
         Build();
-        m_root.SetActive(false); 
+        m_root.SetActive(false);
     }
 
     public void Open()
     {
         if (m_root != null) m_root.SetActive(true);
-        SetMainUIVisible(false); // hide the main menu buttons behind the credits
+        SetMainUIVisible(false);
     }
 
     public void Close()
     {
         if (m_root != null) m_root.SetActive(false);
-        SetMainUIVisible(true); // bring the main menu buttons back
+        SetMainUIVisible(true);
     }
 
-    // Toggle the main menu objects assigned in the inspector.
     private void SetMainUIVisible(bool visible)
     {
         if (m_objectsToHideWhileOpen == null) return;
@@ -56,8 +59,6 @@ public class CreditsUIBuilder : MonoBehaviour
 
     private void Build()
     {
-        Font builtinFont = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-
         // --- Canvas root ---
         m_root = new GameObject("CreditsCanvas",
             typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
@@ -66,7 +67,7 @@ public class CreditsUIBuilder : MonoBehaviour
         canvas.sortingOrder = 100;
         CanvasScaler scaler = m_root.GetComponent<CanvasScaler>();
         scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-        scaler.referenceResolution = new Vector2(1920, 1080);
+        scaler.referenceResolution = new Vector2(320, 180);
 
         // --- Background ---
         GameObject background = CreateChild("Background", m_root.transform);
@@ -81,8 +82,8 @@ public class CreditsUIBuilder : MonoBehaviour
         viewportRect.anchorMin = new Vector2(0.5f, 0.5f);
         viewportRect.anchorMax = new Vector2(0.5f, 0.5f);
         viewportRect.pivot = new Vector2(0.5f, 0.5f);
-        viewportRect.sizeDelta = new Vector2(1200, 800);
-        viewportRect.anchoredPosition = new Vector2(0, 40);
+        viewportRect.sizeDelta = new Vector2(300, 140);
+        viewportRect.anchoredPosition = new Vector2(0, 10);
         viewport.AddComponent<RectMask2D>();
 
         // --- Content scorrevole ---
@@ -91,16 +92,14 @@ public class CreditsUIBuilder : MonoBehaviour
         contentRect.anchorMin = new Vector2(0.5f, 0.5f);
         contentRect.anchorMax = new Vector2(0.5f, 0.5f);
         contentRect.pivot = new Vector2(0.5f, 0.5f);
-        contentRect.sizeDelta = new Vector2(1100, 0);
+        contentRect.sizeDelta = new Vector2(280, 0);
 
-        Text text = content.AddComponent<Text>();
-        text.font = builtinFont;
+        TextMeshProUGUI text = content.AddComponent<TextMeshProUGUI>();
+        if (m_customFont != null) text.font = m_customFont;
         text.text = m_creditsText;
         text.fontSize = m_fontSize;
         text.color = m_textColor;
-        text.alignment = TextAnchor.UpperCenter;
-        text.horizontalOverflow = HorizontalWrapMode.Wrap;
-        text.verticalOverflow = VerticalWrapMode.Overflow;
+        text.alignment = TextAlignmentOptions.Top;
 
         ContentSizeFitter fitter = content.AddComponent<ContentSizeFitter>();
         fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
@@ -109,28 +108,7 @@ public class CreditsUIBuilder : MonoBehaviour
         CreditsScroll scroll = viewport.AddComponent<CreditsScroll>();
         scroll.Setup(contentRect, m_scrollSpeed, m_loop);
 
-        // --- Btn Back ---
-        GameObject backBtn = CreateChild("BackButton", background.transform);
-        RectTransform backRect = (RectTransform)backBtn.transform;
-        backRect.anchorMin = new Vector2(0.5f, 0f);
-        backRect.anchorMax = new Vector2(0.5f, 0f);
-        backRect.pivot = new Vector2(0.5f, 0f);
-        backRect.sizeDelta = new Vector2(280, 80);
-        backRect.anchoredPosition = new Vector2(0, 40);
-        Image backImg = backBtn.AddComponent<Image>();
-        backImg.color = new Color(0.2f, 0.2f, 0.2f, 1f);
-        Button button = backBtn.AddComponent<Button>();
-        button.onClick.AddListener(Close);
-
-        GameObject backLabel = CreateChild("Label", backBtn.transform);
-        RectTransform backLabelRect = (RectTransform)backLabel.transform;
-        Stretch(backLabelRect);
-        Text backText = backLabel.AddComponent<Text>();
-        backText.font = builtinFont;
-        backText.text = "Back";
-        backText.fontSize = 32;
-        backText.color = Color.white;
-        backText.alignment = TextAnchor.MiddleCenter;
+        scroll.onFinished.AddListener(Close);
     }
 
     private static GameObject CreateChild(string name, Transform parent)
