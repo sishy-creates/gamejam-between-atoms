@@ -5,6 +5,8 @@ public class fallingPotion : MonoBehaviour
 {
     private Rigidbody2D m_rb;
     private CircleCollider2D m_collider;
+
+    private bool m_hasShattered = false;
     
     [SerializeField] private Animator m_animator;
 
@@ -26,8 +28,12 @@ public class fallingPotion : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
+        if (m_hasShattered) return;
+
         if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
+            m_hasShattered = true;
             Debug.Log("Potion hit ground");
             m_animator.SetBool("isGrounded", true);
             SpawnCloud();
