@@ -234,6 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f477600a971bf47a4e8e575a829d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
+  m_creditsPanel: {fileID: 0}
+  m_mainPanel: {fileID: 0}
 --- !u!4 &72432423
 Transform:
   m_ObjectHideFlags: 0
@@ -416,6 +418,18 @@ MonoBehaviour:
       - m_Target: {fileID: 9987845}
         m_TargetAssemblyTypeName: SimpleAudioController, Assembly-CSharp
         m_MethodName: PlayOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1281426625}
+        m_TargetAssemblyTypeName: CreditsUIBuilder, Assembly-CSharp
+        m_MethodName: Open
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1014,6 +1028,92 @@ MonoBehaviour:
       Data3: 548368291
       Data4: -1355200037
     Path: event:/Select
+--- !u!1 &1281426623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1281426624}
+  - component: {fileID: 1281426625}
+  m_Layer: 0
+  m_Name: Credits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1281426624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281426623}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1281426625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281426623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be16e5b54fbe43fd9fd581c507669cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CreditsUIBuilder
+  m_creditsText: 'CREDITS
+
+
+
+    Game Design
+
+    Calogero & Filippo
+
+
+    Programming
+
+    Silvia
+
+    Matteo
+
+    Calogero
+
+    Filippo
+
+    Antonio
+
+    Alessandro
+
+
+    Art
+
+    Calogero
+    & Antonio
+
+
+    Audio
+
+    Alessandro
+
+
+
+    Thanks for Playing!'
+  m_scrollSpeed: 60
+  m_loop: 0
+  m_fontSize: 36
+  m_textColor: {r: 1, g: 1, b: 1, a: 0.98039216}
+  m_backgroundColor: {r: 0, g: 0, b: 0, a: 0.9019608}
 --- !u!1 &1435574745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,3 +1646,4 @@ SceneRoots:
   - {fileID: 1435574749}
   - {fileID: 212258690}
   - {fileID: 9987844}
+  - {fileID: 1281426624}
