@@ -228,12 +228,18 @@ public class PlayerController : MonoBehaviour
     private void HandleWallSlide()
     {
         bool pressingToWall = (isFacingRight && horizontalInput > 0) || (!isFacingRight && horizontalInput < 0);
+        
+        bool canSlide = isWalled && pressingToWall && !isGrounded && rb.linearVelocity.y <= 0;
 
-        if (isWalled && pressingToWall && !isGrounded && rb.linearVelocity.y <= 0)
+        if(!isWallSliding && canSlide)
+        {
+            onSlide.Invoke(); // used to trigger sound only the first time the slide condition is met
+        }
+
+        if (canSlide)
         {
             isWallSliding = true;
             jumpsLeft = maxJumps;
-            onSlide.Invoke();
         }
         else
         {
