@@ -3,14 +3,14 @@ using UnityEngine;
 public class triggerPoint : MonoBehaviour
 {
     private Transform m_body;
-    private fallingObject fallingSystem;
+    private fallingPotion fallingPotion;
 
     private void Awake()
     {
         m_body = transform.parent.Find("Body");
         if (m_body != null)
         {
-            fallingSystem = m_body.GetComponent<fallingObject>();
+            fallingPotion = m_body.GetComponent<fallingPotion>();
         }
     }
 
@@ -18,7 +18,7 @@ public class triggerPoint : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player")){
             Debug.Log("Player detected");
-            fallingSystem.StartFalling();
+            fallingPotion.StartFalling();
         }
     }
 }
