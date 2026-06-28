@@ -58,52 +58,6 @@ public class PlayerAudioController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            return;
-        }
-
-        if (!impactSoundEvent.IsNull)
-        {
-            RuntimeManager.PlayOneShot(impactSoundEvent);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        
-        if (other.CompareTag("Ground"))
-        {
-            return;
-        }
-        
-        if (other.CompareTag("TODO"))
-        {
-            if (!pickupSoundEvent.IsNull)
-            {
-                RuntimeManager.PlayOneShot(pickupSoundEvent, other.transform.position);
-            }
-
-        }
-
-
-        if (other.CompareTag("TableZone"))
-        {
-            currentSurfaceType = 0;
-        }
-        else if (other.CompareTag("GardenZone"))
-        {
-            currentSurfaceType = 1;
-        }
-        else if (other.CompareTag("AtomicZone"))
-        {
-            currentSurfaceType = 2;
-        }
-
-    }
-
     void OnDestroy()
     {
         if (footstepInstance.isValid())
