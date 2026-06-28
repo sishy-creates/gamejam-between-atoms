@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2490879279891165025}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.143, y: -0.002, z: 0}
+  m_LocalPosition: {x: 0.1949, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97,7 +97,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.021913469, y: 0.008805141}
+  m_Offset: {x: 0.0009805784, y: 0.008805141}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -107,7 +107,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.2253151, y: 0.15763363}
+  m_Size: {x: 0.20551483, y: 0.15763363}
   m_EdgeRadius: 0
 --- !u!1 &3413956171684806878
 GameObject:
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 1054173287978658504}
   - component: {fileID: 8775324833396407809}
   - component: {fileID: 2864294768621163205}
-  - component: {fileID: 6816972912826788413}
+  - component: {fileID: 4797071375955958568}
   m_Layer: 8
   m_Name: Dog
   m_TagString: Untagged
@@ -294,7 +294,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -340,17 +340,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.004235983, y: 0.010059953}
+  m_Offset: {x: 0.002017364, y: 0.010059953}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.27}
+    oldSize: {x: 0.34, y: 0.29}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.38153696, y: 0.29393482}
+  m_Size: {x: 0.38501748, y: 0.29393482}
   m_EdgeRadius: 0
 --- !u!114 &1419926443125234390
 MonoBehaviour:
@@ -364,17 +364,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc478eb4df751e640882d50286531813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DogController
-  moveSpeed: 2
-  jumpForce: 6
+  moveSpeed: 1
+  jumpForce: 4
   groundCheck: {fileID: 7762407792274146313}
-  groundCheckRadius: 0.15
+  groundCheckRadius: 0.05
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   wallCheck: {fileID: 5710374314444915650}
-  wallCheckDistance: 0.5
+  wallCheckDistance: 0.1
   gapCheck: {fileID: 5762379362355964771}
-  gapCheckDistance: 0.6
+  gapCheckDistance: 0.2
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DogOffScreenLoseCondition
   mainCamera: {fileID: 0}
-  maxOffScreenTime: 10
+  maxOffScreenTime: 999999
 --- !u!114 &2864294768621163205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,7 +458,7 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
---- !u!95 &6816972912826788413
+--- !u!95 &4797071375955958568
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -468,7 +468,7 @@ Animator:
   m_GameObject: {fileID: 8128686021009901799}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7eea479a516329c4388159ec60d2fdd1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 85cd2c92f2e24e241acafb4579377c0b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -505,7 +505,7 @@ Transform:
   m_GameObject: {fileID: 8597080847353939496}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.123, y: -0.132, z: 0}
+  m_LocalPosition: {x: 0.1727, y: -0.132, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

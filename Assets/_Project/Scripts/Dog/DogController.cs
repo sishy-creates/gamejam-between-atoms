@@ -43,24 +43,27 @@ public class DogController : MonoBehaviour
     }
 
     private void FixedUpdate()
-{
-    if (isCaught) return;
-
-    MoveForward();
-
-    bool obstacleDetected = CheckWall() || CheckGap();
-
-    if (obstacleDetected && !hasJumpedOverObstacle)
     {
-        Jump();
-        hasJumpedOverObstacle = true;
-    }
+        if (isCaught) return;
 
-    if (!obstacleDetected && isGrounded)
-    {
-        hasJumpedOverObstacle = false;
+        MoveForward();
+
+        bool obstacleDetected = CheckWall() || CheckGap();
+
+        // Only jump if we see an obstacle, haven't jumped yet, AND are on the ground
+        if (obstacleDetected && !hasJumpedOverObstacle && isGrounded)
+        {
+            Jump();
+            hasJumpedOverObstacle = true;
+        }
+
+        // --- THE STAIRCASE FIX ---
+        // If the dog is on the ground and is not currently flying upward, reset the jump!
+        if (isGrounded && rb.linearVelocity.y <= 0f)
+        {
+            hasJumpedOverObstacle = false;
+        }
     }
-}
 
     private void MoveForward()
     {
