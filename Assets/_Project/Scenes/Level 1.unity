@@ -686,9 +686,9 @@ GameObject:
   m_Component:
   - component: {fileID: 451689487}
   - component: {fileID: 451689486}
-  - component: {fileID: 451689485}
   - component: {fileID: 451689488}
   - component: {fileID: 451689489}
+  - component: {fileID: 451689490}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -696,14 +696,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &451689485
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451689484}
-  m_Enabled: 1
 --- !u!20 &451689486
 Camera:
   m_ObjectHideFlags: 0
@@ -827,6 +819,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraParallax
   Player: {fileID: 268048688}
+--- !u!114 &451689490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451689484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &516299580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,6 +1675,92 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29335a9513ebdd1459c6d6cfbd370e2d, type: 3}
+--- !u!1 &1407971940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407971942}
+  - component: {fileID: 1407971941}
+  m_Layer: 0
+  m_Name: AudioMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1407971941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407971940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf5e04bc58fd4c849495313ac382d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAudioController
+  soundEvent:
+    Guid:
+      Data1: 1683346085
+      Data2: 1107887167
+      Data3: -1658611833
+      Data4: -1560367
+    Path: event:/Music
+  oneShotEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  oneShotEvent2:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  oneShotEvent3:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  collisionSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  triggerSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+--- !u!4 &1407971942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407971940}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.55683, y: -1.47568, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1542978593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1684,6 +1776,26 @@ PrefabInstance:
     - target: {fileID: 1419926443125234390, guid: c5a68417e6a266b49b738bf24ded18e5, type: 3}
       propertyPath: moveSpeed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864294768621163205, guid: c5a68417e6a266b49b738bf24ded18e5, type: 3}
+      propertyPath: soundEvent.Path
+      value: event:/Cane
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864294768621163205, guid: c5a68417e6a266b49b738bf24ded18e5, type: 3}
+      propertyPath: soundEvent.Guid.Data1
+      value: 869701559
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864294768621163205, guid: c5a68417e6a266b49b738bf24ded18e5, type: 3}
+      propertyPath: soundEvent.Guid.Data2
+      value: 1175612596
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864294768621163205, guid: c5a68417e6a266b49b738bf24ded18e5, type: 3}
+      propertyPath: soundEvent.Guid.Data3
+      value: 1952254358
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864294768621163205, guid: c5a68417e6a266b49b738bf24ded18e5, type: 3}
+      propertyPath: soundEvent.Guid.Data4
+      value: 1238375547
       objectReference: {fileID: 0}
     - target: {fileID: 5430982758929957889, guid: c5a68417e6a266b49b738bf24ded18e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2377,3 +2489,4 @@ SceneRoots:
   - {fileID: 1400072333}
   - {fileID: 56870305}
   - {fileID: 833161913}
+  - {fileID: 1407971942}
