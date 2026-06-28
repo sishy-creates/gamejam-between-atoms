@@ -16,6 +16,7 @@ public class AntimatterBlob : MonoBehaviour
 
     [SerializeField] private float movemetRadius = 0.5f;
     [SerializeField] private float movementSpeed = 1f;
+
     private float seedX;
     private float seedY;
     
@@ -25,6 +26,8 @@ public class AntimatterBlob : MonoBehaviour
     [SerializeField] private bool alreadyUsed;
 
     Vector3 startPosition;
+
+    private Animator m_animator;
 
     void Awake()
     {
@@ -42,7 +45,9 @@ public class AntimatterBlob : MonoBehaviour
         alreadyUsed = false;
         antiMatterCondition = false;
         antiMatterTime = 5f;
-        counter = 0f; 
+        counter = 0f;
+
+        m_animator = transform.GetComponent<Animator>();
     }
 
     private void Update()
@@ -105,7 +110,5 @@ public class AntimatterBlob : MonoBehaviour
            
         antiMatterCondition = true;
         alreadyUsed = true;
-
-        
     }
 }

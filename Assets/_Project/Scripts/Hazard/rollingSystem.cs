@@ -13,20 +13,22 @@ public class rollingSystem : MonoBehaviour
 
     PlayerController playerController;
 
+    private Animator m_animator;
+
     private void Awake()
     {
         m_rb = transform.GetComponent<Rigidbody2D>();
         groundCheckRadius = 0.6f;
         rollingSpeed = 3f;
+
+        m_animator = transform.GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(transform.position, groundCheckRadius, groundLayer);
-
-
         if (isGrounded)
         {
+            StartRolling();
             Vector3 targetPosition = transform.position + Vector3.left * Time.deltaTime * rollingSpeed; 
             m_rb.MovePosition(targetPosition);
         }
@@ -34,12 +36,22 @@ public class rollingSystem : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.transform.CompareTag("Player"))
-            return;
+        if (collision.transform.CompareTag("Player"))
+        {
+            Debug.Log("Tube hit Player");
+            playerController = collision.transform.GetComponent<PlayerController>();
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        { 
+            isGrounded = true;
+        }  
             
-        Debug.Log("Tube hit Player");
-        playerController = collision.transform.GetComponent<PlayerController>();
+    
     }
 
-
+    private void StartRolling()
+    {
+        m_animator.SetBool("isRolling", true);
+    }
 }
