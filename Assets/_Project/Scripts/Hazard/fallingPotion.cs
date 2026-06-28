@@ -37,6 +37,7 @@ public class fallingPotion : MonoBehaviour
             Debug.Log("Potion hit ground");
             m_animator.SetBool("isGrounded", true);
             SpawnCloud();
+            Destroy(gameObject);
         } 
     }
 
