@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private UnityEvent onWin;
     [SerializeField] private UnityEvent onLose;
+    [SerializeField] private GameObject pauseMenu;
 
     public bool IsGameOver { get; private set; }
     public bool IsVictory { get; private set; }
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
 
         IsPaused = !IsPaused;
         Time.timeScale = IsPaused ? 0f : 1f;
+        pauseMenu.SetActive(IsPaused);
         Debug.Log(IsPaused ? "PAUSED" : "RESUMED");
     }
 
