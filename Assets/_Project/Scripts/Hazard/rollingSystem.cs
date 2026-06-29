@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class rollingSystem : MonoBehaviour
 {
     // You can keep this visible in the Inspector to watch it turn on and off while testing!
     [SerializeField] private bool isGrounded;
     [SerializeField] private float rollingSpeed = 3f;
+
+    [SerializeField] private UnityEvent onTouchGround;
 
     private Rigidbody2D m_rb;
     private Animator m_animator;
@@ -45,6 +48,12 @@ public class rollingSystem : MonoBehaviour
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             // Tube touches the ground -> Start rolling
+
+            if (!isGrounded)
+            {
+                onTouchGround.Invoke();
+            }
+
             isGrounded = true;
         }
     }
