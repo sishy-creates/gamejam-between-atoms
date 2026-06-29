@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class DogPope : MonoBehaviour
 {
-    [SerializeField] private float incapacityTime = 3f;
+    [SerializeField] private float incapacityTime = 1.5f;
     [SerializeField] private bool p_incapacity = false;
 
     [SerializeField] private UnityEvent onHit;
@@ -23,7 +23,7 @@ public class DogPope : MonoBehaviour
     private void Awake()
     {
         count = 0;
-        incapacityTime = 3f;
+        incapacityTime = 1.5f;
         p_incapacity = false;
     }
 
