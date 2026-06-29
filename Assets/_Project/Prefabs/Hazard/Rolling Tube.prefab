@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6353435500894048690}
   - component: {fileID: 1389990323427951216}
   - component: {fileID: 3095244795864475795}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 5616713944263024335}
   - component: {fileID: 9150040569820314831}
   - component: {fileID: 989133648050097425}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: TriiggerPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,13 +286,13 @@ GameObject:
   - component: {fileID: 5615488255571906469}
   - component: {fileID: 6049058602469377660}
   - component: {fileID: 6170436314626193108}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Rolling Tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5615488255571906469
 Transform:
   m_ObjectHideFlags: 0

@@ -45,6 +45,8 @@ public class DogPope : MonoBehaviour
             playerController.walkSpeed = originalWalkSpeed;
             playerController.runSpeed = originalRunSpeed;
             playerController.jumpForce = originalJumpForce;
+
+            Destroy(gameObject);
         }
     }
 
@@ -68,5 +70,7 @@ public class DogPope : MonoBehaviour
         p_incapacity = true;
 
         onHit.Invoke();
+        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = false;
     }
 }

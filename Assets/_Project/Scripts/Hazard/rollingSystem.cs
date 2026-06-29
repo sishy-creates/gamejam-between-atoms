@@ -40,7 +40,7 @@ public class rollingSystem : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             Debug.Log("Tube hit Player");
-            Destroy(gameObject);
+            GameManager.Instance.GameOver();
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {

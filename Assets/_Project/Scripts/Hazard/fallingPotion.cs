@@ -10,6 +10,8 @@ public class fallingPotion : MonoBehaviour
     
     [SerializeField] private Animator m_animator;
 
+    [SerializeField] private float gravityScale = 1.0f;
+
     [SerializeField] private GameObject gasCloud;
     [SerializeField] private Transform cloudSpawnPosition;
 
@@ -22,7 +24,7 @@ public class fallingPotion : MonoBehaviour
 
     public void StartFalling()
     {
-        m_rb.gravityScale = 2.0f;
+        m_rb.gravityScale = gravityScale;
         m_animator.SetBool("isFalling", true);
     }
 

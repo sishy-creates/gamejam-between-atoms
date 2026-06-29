@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6772121882524923048}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: FallingPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 7417006003659210723}
   - component: {fileID: 5321417651420686939}
   - component: {fileID: 8929040509160148849}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rock
   m_animator: {fileID: 0}
+  gravityScale: 1
   gasCloud: {fileID: 4962149161120761718, guid: 9a6b91f21cfa1c246acad80880bcb866, type: 3}
   cloudSpawnPosition: {fileID: 0}
 --- !u!1 &8611578282874366667
@@ -239,7 +240,7 @@ GameObject:
   - component: {fileID: 6010762433079452237}
   - component: {fileID: 4635904863170250650}
   - component: {fileID: 3642773834793784150}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: TriggerPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
