@@ -1433,6 +1433,92 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
   cam: {fileID: 451689486}
   subject: {fileID: 2141997819}
+--- !u!1 &518642079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 518642081}
+  - component: {fileID: 518642080}
+  m_Layer: 0
+  m_Name: IntroMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &518642080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518642079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf5e04bc58fd4c849495313ac382d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAudioController
+  soundEvent:
+    Guid:
+      Data1: -1409028942
+      Data2: 1319351766
+      Data3: -57641563
+      Data4: 419439573
+    Path: event:/MusicIntro
+  oneShotEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  oneShotEvent2:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  oneShotEvent3:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  collisionSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  triggerSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+--- !u!4 &518642081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518642079}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1269.3549, y: 749.73755, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &641996104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,6 +2018,7 @@ GameObject:
   - component: {fileID: 975837838}
   - component: {fileID: 975837837}
   - component: {fileID: 975837839}
+  - component: {fileID: 975837840}
   m_Layer: 5
   m_Name: NewGame
   m_TagString: Untagged
@@ -2015,6 +2102,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 975837840}
+        m_TargetAssemblyTypeName: HoverButtonAudioHelper, Assembly-CSharp
+        m_MethodName: PlaySelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &975837838
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2035,6 +2134,32 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &975837840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975837835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e1f8c8ce83a40e6b2a9a846c454019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverButtonAudioHelper
+  onHoverEvent:
+    Guid:
+      Data1: -864189110
+      Data2: 1139056457
+      Data3: -2015910511
+      Data4: 674790926
+    Path: event:/Navigate
+  onClickEvent:
+    Guid:
+      Data1: -479859848
+      Data2: 1186738551
+      Data3: 548368291
+      Data4: -1355200037
+    Path: event:/Select
 --- !u!1 &1048498179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,6 +2309,7 @@ GameObject:
   - component: {fileID: 1126720853}
   - component: {fileID: 1126720852}
   - component: {fileID: 1126720854}
+  - component: {fileID: 1126720855}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -2267,6 +2393,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1126720855}
+        m_TargetAssemblyTypeName: HoverButtonAudioHelper, Assembly-CSharp
+        m_MethodName: PlaySelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1126720853
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2287,6 +2425,32 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1126720855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126720850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e1f8c8ce83a40e6b2a9a846c454019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverButtonAudioHelper
+  onHoverEvent:
+    Guid:
+      Data1: -864189110
+      Data2: 1139056457
+      Data3: -2015910511
+      Data4: 674790926
+    Path: event:/Navigate
+  onClickEvent:
+    Guid:
+      Data1: -479859848
+      Data2: 1186738551
+      Data3: 548368291
+      Data4: -1355200037
+    Path: event:/Select
 --- !u!1 &1229834000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,9 +2482,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CreditsUIBuilder
   m_creditsText: 'CREDITS
 
-    
 
-    
+
+
 
     [Game Design]
 
@@ -2333,24 +2497,23 @@ MonoBehaviour:
 
     (github.com/filotat)
 
-    
 
-    
 
-    
+
+
+
 
     [Level Design]
 
-    Matteo
-    Rizzo
+    Matteo Rizzo
 
     (github.com/matterizzo)
 
-    
 
-    
 
-    
+
+
+
 
     [Programming]
 
@@ -2381,13 +2544,13 @@ MonoBehaviour:
 
     (github.com/Xander089)
 
-    
 
-    
 
-    
 
-    
+
+
+
+
 
     [Art]
 
@@ -2400,22 +2563,22 @@ MonoBehaviour:
 
     (github.com/CH4nt014)
 
-    
 
-    
 
-    
 
-    
+
+
+
+
 
     [Audio]
 
     Alessandro
     Lombardi (github.com/Xander089)
 
-    
 
-    
+
+
 
     Thanks for Playing!'
   m_scrollSpeed: 40
@@ -2637,6 +2800,7 @@ GameObject:
   - component: {fileID: 1387973981}
   - component: {fileID: 1387973980}
   - component: {fileID: 1387973982}
+  - component: {fileID: 1387973983}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -2720,6 +2884,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1387973983}
+        m_TargetAssemblyTypeName: HoverButtonAudioHelper, Assembly-CSharp
+        m_MethodName: PlaySelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1387973981
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2740,6 +2916,32 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1387973983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387973978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e1f8c8ce83a40e6b2a9a846c454019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverButtonAudioHelper
+  onHoverEvent:
+    Guid:
+      Data1: -864189110
+      Data2: 1139056457
+      Data3: -2015910511
+      Data4: 674790926
+    Path: event:/Navigate
+  onClickEvent:
+    Guid:
+      Data1: -479859848
+      Data2: 1186738551
+      Data3: 548368291
+      Data4: -1355200037
+    Path: event:/Select
 --- !u!1 &1521544645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3742,3 +3944,4 @@ SceneRoots:
   - {fileID: 447511933}
   - {fileID: 1521544648}
   - {fileID: 4497726592081942669}
+  - {fileID: 518642081}
