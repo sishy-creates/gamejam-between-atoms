@@ -2318,45 +2318,106 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CreditsUIBuilder
   m_creditsText: 'CREDITS
 
+    
 
+    
 
-    Game Design
+    [Game Design]
 
-    Calogero
+    Calogero Carlino
+
+    (github.com/CarlinoCalogero)
 
     Filippo
+    Tatulli
 
+    (github.com/filotat)
 
-    Programming
+    
 
-    Silvia
+    
+
+    
+
+    [Level Design]
 
     Matteo
+    Rizzo
+
+    (github.com/matterizzo)
+
+    
+
+    
+
+    
+
+    [Programming]
+
+    Silvia
+    Lanzoni
+
+    (github.com/sishy-creates)
+
+    Matteo Rizzo
+
+    (github.com/matterizzo)
 
     Calogero
+    Carlino
 
-    Filippo
+    (github.com/CarlinoCalogero)
+
+    Filippo Tatulli
+
+    (github.com/filotat)
 
     Antonio
+    Rinaldi
 
-    Alessandro
+    (github.com/CH4nt014)
 
+    Alessandro Lombardi
 
-    Art
+    (github.com/Xander089)
+
+    
+
+    
+
+    
+
+    
+
+    [Art]
 
     Calogero
+    Carlino
 
-    Antonio
+    (github.com/CarlinoCalogero)
 
+    Antonio Rinaldi
 
-    Audio
+    (github.com/CH4nt014)
+
+    
+
+    
+
+    
+
+    
+
+    [Audio]
 
     Alessandro
+    Lombardi (github.com/Xander089)
 
+    
 
+    
 
-    Thanks
-    for Playing!'
+    Thanks for Playing!'
   m_scrollSpeed: 40
   m_loop: 0
   m_fontSize: 15
