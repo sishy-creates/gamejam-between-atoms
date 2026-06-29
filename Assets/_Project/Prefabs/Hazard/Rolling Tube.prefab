@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6353435500894048690}
   - component: {fileID: 1389990323427951216}
   - component: {fileID: 3095244795864475795}
+  - component: {fileID: 5827958046496857645}
   m_Layer: 13
   m_Name: Body
   m_TagString: Untagged
@@ -194,6 +195,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   isGrounded: 0
   rollingSpeed: 1
+  onTouchGround:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5827958046496857645}
+        m_TargetAssemblyTypeName: SimpleAudioController, Assembly-CSharp
+        m_MethodName: PlayOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5827958046496857645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420773544823341871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf5e04bc58fd4c849495313ac382d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleAudioController
+  soundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  oneShotEvent:
+    Guid:
+      Data1: -669591249
+      Data2: 1185983865
+      Data3: -1936393054
+      Data4: -1153363901
+    Path: event:/RollingGlass
+  oneShotEvent2:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  oneShotEvent3:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  collisionSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  triggerSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &6057009576286174765
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +354,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5615488255571906469}
-  - component: {fileID: 6049058602469377660}
   - component: {fileID: 6170436314626193108}
   m_Layer: 13
   m_Name: Rolling Tube
@@ -310,60 +379,6 @@ Transform:
   - {fileID: 5616713944263024335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6049058602469377660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7303140445861827486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf5e04bc58fd4c849495313ac382d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SimpleAudioController
-  soundEvent:
-    Guid:
-      Data1: -669591249
-      Data2: 1185983865
-      Data3: -1936393054
-      Data4: -1153363901
-    Path: event:/RollingGlass
-  oneShotEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  oneShotEvent2:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  oneShotEvent3:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  collisionSoundEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  triggerSoundEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!95 &6170436314626193108
 Animator:
   serializedVersion: 7
