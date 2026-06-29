@@ -12559,7 +12559,7 @@ PrefabInstance:
       objectReference: {fileID: 451689486}
     - target: {fileID: 8775324833396407809, guid: c5a68417e6a266b49b738bf24ded18e5, type: 3}
       propertyPath: maxOffScreenTime
-      value: 99999
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
