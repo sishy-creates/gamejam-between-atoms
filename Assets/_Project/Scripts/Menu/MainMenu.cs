@@ -15,6 +15,16 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private float m_animationDuration = 0.5f;
     [SerializeField] private float m_staggerDelay = 0.2f;
 
+
+    private void Awake()
+    {
+
+        if (m_firstSelectedButton != null)
+        {
+            EventSystem.current.SetSelectedGameObject(m_firstSelectedButton);
+        }
+    }
+
     private void Start()
     {
         foreach (var element in m_uiElementsToAnimate)
